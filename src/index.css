@@ -1,0 +1,33 @@
+:root {
+  color-scheme: light;
+  color: rgba(15, 23, 42, 0.87);
+  background-color: #f8fafc;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}

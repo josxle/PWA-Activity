@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  pwa-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pwa-task-manager
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Volumen para certificados SSL (crear con certbot)
+      - ./certs:/etc/nginx/certs:ro
+      # Volumen para logs
+      - ./logs:/var/log/nginx
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - pwa-network
+
+networks:
+  pwa-network:
+    driver: bridge

@@ -1,0 +1,50 @@
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos de compilación
+dist/
+build/
+.tsbuildinfo
+
+# Archivos de configuración local
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Certificados SSL (usar mount volumes en Docker)
+certs/
+*.pem
+*.key
+*.crt
+*.csr
+
+# Logs
+logs/
+*.log
+
+# Docker
+.dockerignore
+
+# Cache
+.cache/
+.eslintcache
+
+# Herramientas de testing
+coverage/
+.nyc_output/
+
+# Temporal
+tmp/
+temp/
